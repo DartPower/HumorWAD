@@ -1,0 +1,23 @@
+pulselight OILLIGHT
+{
+    color 174 87 0 //סהוכאי ס‏הא מנאםזוגûי ןכח שא ÿ ג דטלןו ןמהבונף
+    size 12
+    secondarySize 18
+    interval 3
+}
+
+object OrangesodaSukada
+{
+ frame BSPTA { light OILLIGHT }
+// frame BSPTB { light OILLIGHT }
+ //frame BSPTC { light OILLIGHT }
+ //frame BSPTD { light OILLIGHT }
+}
+
+//object OrangesodaHrendermo
+//{
+ //frame BSPTA { light OILLIGHT }
+ //frame BSPTB { light OILLIGHT }
+ //frame BSPTC { light OILLIGHT }
+ //frame BSPTD { light OILLIGHT }
+//}

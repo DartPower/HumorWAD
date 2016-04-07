@@ -1,0 +1,56 @@
+#include "zcommon.acs"
+#library "huita"
+
+function int round(int fixedNumber)
+{
+	return (fixedNumber + 0.5) >> 16;
+}
+
+script 996 (void)
+{
+if (CheckWeapon("Pinus")) { SetResultValue(1); } else {SetResultValue(0);} //Pinus надо будет сделать просто пустое оружие без спрайтов заменяет Fist я знаю, в трешодуме есть Pinus XD хм похуй
+}
+
+script 874 (int a,int b,int c) //для совместимости со стмпаддишенс
+{
+	int oldtid=0;
+	int temptid=21529+random(0,16384)+PlayerNumber();
+	int oldangle=0;
+
+	if(a==4)
+	{
+		oldtid=ActivatorTID();
+		Thing_ChangeTID(oldtid,temptid);
+		TakeActorInventory(temptid,"NapalmTurretArgs2",1000);
+		oldangle=round(GetActorAngle(temptid)*360);
+        SetActorAngle(temptid,oldangle+0.25);
+		GiveActorInventory(temptid,"NapalmTurretArgs2",oldangle);
+		Thing_ChangeTID(temptid,oldtid);
+	}
+	if(a==5)
+	{
+		oldtid=ActivatorTID();
+		Thing_ChangeTID(oldtid,temptid);
+		oldangle=CheckActorInventory(temptid,"NapalmTurretArgs2")/360;
+        SetActorAngle(temptid,oldangle);
+		Thing_ChangeTID(temptid,oldtid);
+	}
+
+	if(a==6)
+	{
+		oldtid=ActivatorTID();
+		Thing_ChangeTID(oldtid,temptid);
+        SetActorAngle(temptid,GetActorAngle(temptid)+0.125);
+		Thing_ChangeTID(temptid,oldtid);
+	}
+
+	if(a==7)
+	{
+		oldtid=ActivatorTID();
+		Thing_ChangeTID(oldtid,temptid);
+        SetActorAngle(temptid,GetActorAngle(temptid)+0.0028*random(10,35));
+		Thing_ChangeTID(temptid,oldtid);
+	}
+}
+
+//script 567 

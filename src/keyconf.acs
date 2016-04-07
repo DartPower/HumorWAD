@@ -1,0 +1,7 @@
+weaponsection "Humor Guns"
+ setslot 1 Pinus
+setslot 5 CoolLauncher GrenadeLauncher
+
+clearplayerclasses
+addplayerclass D3Wraith
+addplayerclass HumorPlayer
